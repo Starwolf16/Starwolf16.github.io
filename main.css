@@ -5,9 +5,6 @@ body {
   background-repeat: no-repeat;
   margin-bottom: fill;
 }
-#bg{
-
-}
 #head, #intro, table, th, td{
   text-align: center;
 }
@@ -35,7 +32,6 @@ td{
   font-weight: bold;
 }
 img{
-  display: block;
   margin:auto;
   width: 200;
 }
