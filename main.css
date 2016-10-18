@@ -4,6 +4,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   margin-bottom: fill;
+  color: white;
 }
 #bg{
 
@@ -14,11 +15,11 @@ body {
 #head{
   color: rgb(34, 135, 168);
 }
-h2{
+h2, #headers, #headers_2, #headers_3{
   color: rgb(107, 195, 225);
 }
 table{
-  width:100%;
+  width:70%;
   border-collapse:separate;;
   height: auto;
   font-size: 11pt;
@@ -35,10 +36,9 @@ td{
   font-weight: bold;
 }
 img{
-  display: block;
   margin:auto;
-  width: 200;
 }
 div{
   font-weight: bold;
 }
+
