@@ -1,0 +1,43 @@
+body {
+  font-size: 11pt;
+  font-family: arial;
+  color: rgb(220, 224, 224);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+#head, #intro, table, th, td{
+  text-align: center;
+}
+#head{
+  color: rgb(34, 135, 168);
+}
+h2{
+  color: rgb(107, 195, 225);
+}
+table{
+  width:70%;
+  border-collapse:separate;;
+  height: auto;
+  font-size: 11pt;
+  font-family: arial;
+  align-content: center;
+}
+th{
+  border-collapse: collapse;
+}
+td{
+  width: 30%;
+  vertical-align: top;
+}
+#headers, #headers_2, #headers_3{
+  font-weight: bold;
+  color: rgb(107, 195, 225);
+}
+#table{
+  align-content: right;
+}
+img{
+  margin-left: 10px;
+}
