@@ -1,0 +1,44 @@
+body {
+  font-size: 11pt;
+  font-family: arial;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-bottom: fill;
+  color: white;
+}
+#bg{
+
+}
+#head, #intro, table, th, td{
+  text-align: center;
+}
+#head{
+  color: rgb(34, 135, 168);
+}
+h2, #headers, #headers_2, #headers_3{
+  color: rgb(107, 195, 225);
+}
+table{
+  width:70%;
+  border-collapse:collapse;
+  height: auto;
+  font-size: 11pt;
+  font-family: arial;
+}
+th{
+  border-collapse: collapse;
+}
+td{
+  width: 30%;
+  vertical-align: top;
+  font-weight: normal;
+}
+#headers, #headers_2, #headers_3{
+  font-weight: bold;
+}
+img{
+  margin:auto;
+}
+div{
+  font-weight: bold;
+}
