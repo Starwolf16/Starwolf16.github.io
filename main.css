@@ -20,7 +20,7 @@ h2, #headers, #headers_2, #headers_3{
 }
 table{
   width:70%;
-  border-collapse:separate;;
+  border-collapse:collapse;
   height: auto;
   font-size: 11pt;
   font-family: arial;
