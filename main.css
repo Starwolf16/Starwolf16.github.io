@@ -13,10 +13,14 @@ body{
 #baptist{
   margin-right: 20px;
   width: 400;
+  max-width: 100%;
+  height: auto;
 }
 #methodist{
   margin-left: 15px;
   width: 350;
+  max-width: 100%;
+  height: auto;
 }
 table{
   width:auto;
