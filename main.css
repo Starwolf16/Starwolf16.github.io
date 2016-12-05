@@ -20,10 +20,12 @@ th{
   column-span: all;
 }
 table, th, tr, td{
-  border: 2px solid white;
   border-collapse: collapse;
 }
 ::selection{
   color: white;
   background: skyBlue;
+}
+#artwork{
+  margin-right: 600px;
 }
