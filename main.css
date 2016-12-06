@@ -5,6 +5,11 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   color: white;
+  font-family: 'Raleway', sans-serif;
+}
+header{
+  font-family: 'Orbitron', sans-serif;
+  font-size: 20pt;
 }
 a:link{
   color: white;
@@ -18,6 +23,7 @@ a:hover{
 th{
   text-align: center;
   column-span: all;
+  font-size: 16pt;
 }
 table, th, tr, td{
   border-collapse: collapse;
@@ -28,4 +34,7 @@ table, th, tr, td{
 }
 #artwork{
   margin-right: 600px;
+}
+dl{
+  margin-left: 50px;
 }
