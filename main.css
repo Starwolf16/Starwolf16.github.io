@@ -1,6 +1,5 @@
 body {
   font-size:11pt;
-  font-family:Verdana;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -35,6 +34,6 @@ table, th, tr, td{
 #artwork{
   margin-right: 600px;
 }
-dl{
+dl, #reqs{
   margin-left: 50px;
 }
