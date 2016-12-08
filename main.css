@@ -9,6 +9,7 @@ body {
 header{
   font-family: 'Orbitron', sans-serif;
   font-size: 20pt;
+  margin-left: 500px;
 }
 a:link{
   color: white;
@@ -21,11 +22,13 @@ a:hover{
 }
 th{
   text-align: center;
-  column-span: all;
   font-size: 16pt;
 }
 table, th, tr, td{
+  /*border: 2px solid white;*/
   border-collapse: collapse;
+  padding-right: 15px;
+  vertical-align: middle;
 }
 ::selection{
   color: white;
@@ -36,4 +39,7 @@ table, th, tr, td{
 }
 dl, #reqs{
   margin-left: 50px;
+}
+tr{
+  width: 100%;
 }
