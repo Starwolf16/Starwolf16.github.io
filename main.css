@@ -1,0 +1,45 @@
+body {
+  font-size:11pt;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: white;
+  font-family: 'Raleway', sans-serif;
+}
+header{
+  font-family: 'Orbitron', sans-serif;
+  font-size: 20pt;
+  margin-left: 500px;
+}
+a:link{
+  color: white;
+}
+a:visited{
+  color: 00e673;
+}
+a:hover{
+  color: ff471a;
+}
+th{
+  text-align: center;
+  font-size: 16pt;
+}
+table, th, tr, td{
+  /*border: 2px solid white;*/
+  border-collapse: collapse;
+  padding-right: 15px;
+  vertical-align: middle;
+}
+::selection{
+  color: white;
+  background: skyBlue;
+}
+#artwork{
+  margin-right: 600px;
+}
+dl, #reqs{
+  margin-left: 50px;
+}
+tr{
+  width: 100%;
+}
