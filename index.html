@@ -75,7 +75,10 @@ same element at once without having to tell each separate element what it should
   table, tr, th, td{
     border-collapse: collapse;
     font-family: 'Raleway', sans-serif;
-   // border: 1px solid black;
+    border: 1px solid black;
+  }
+  table{
+    width: 100%;
   }
   th, td{
     padding-left: 5px;
@@ -106,9 +109,9 @@ I wouldn't have any formatting errors.
 <table>
   <tr>
     <td>
-      <img src="bmi-chart.png" align="left" alt="BMI chart" height="500">
+      <img src="bmi-chart.png" align="left" alt="BMI chart" height="33%">
     </td>
-    <td style="text-align: center;" width="100%">
+    <td style="text-align: center; width: 50%">
       <header>
         <h1>
           BMI calculator
@@ -164,7 +167,7 @@ I wouldn't have any formatting errors.
       <button type="reset" onclick="resetconvert()">Reset</button>
     </td>
     <td>
-      <img src="bmi.jpg" height="500" align="right">
+      <img src="bmi.jpg" height="45%" align="right">
     </td>
   </tr>
 </table>
