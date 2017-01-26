@@ -15,11 +15,11 @@
    please enter a value for height and/or weight.
   */
   function bmi() {
+      var h = document.getElementById('height').value;
+      var w = document.getElementById('weight').value;
       if (h <= 0 || w <= 0) {
           document.getElementById('bmicalc').innerHTML = "Please enter a value for height and/or weight";
       } else {
-          var h = document.getElementById('height').value;
-          var w = document.getElementById('weight').value;
           var h2 = Math.pow(h, 2);
           var z = w / h2;
           document.getElementById('bmicalc').innerHTML = z.toFixed(2);
@@ -61,7 +61,6 @@ same element at once without having to tell each separate element what it should
   body{
     font-family: 'Raleway', sans-serif ;
     margin: 15px;
-    color: white;
     //text-align: center;
   }
   h1, h3{
@@ -101,7 +100,7 @@ same element at once without having to tell each separate element what it should
     margin-right: 70px;
   }
 </style>
-<body class="w3-green" bgcolor = "#4CAF50">
+<body class="w3-green">
 <!--
 I used a table here so that I could have the images and the calculator all on the same line with each other, and so that
 I wouldn't have any formatting errors.
