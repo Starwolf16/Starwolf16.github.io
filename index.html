@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<!--
+  Jonathan Tarrant
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Trial</title>
+  <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+  <link href="https://fonts.googleapis.com/css?family=Orbitron|Raleway" rel="stylesheet">
+</head>
+<script>
+  function f1() {
+      document.getElementById('demo').innerHTML='Changing HTML Content';
+  }
+  function f2() {
+      window.alert('This is a pop-up created with the button');
+  }
+  function f3() {
+      var x = 20;
+      var y = 77;
+      document.getElementById('demo').innerHTML =   x + y
+  }
+  function f4() {
+      document.getElementById('MO').style.fontSize = "45px";
+  }
+
+  var imgArray = new Array(4);
+  var index = 0;
+
+  imgArray[0] = new Image;
+  imgArray[0].src = "bluearrow.png";
+  imgArray[1] = new Image;
+  imgArray[1].src = "redarrow.png";
+  imgArray[2] = new Image;
+  imgArray[2].src = "greenarrow.png";
+  imgArray[3] = new Image;
+  imgArray[3].src = "yellowarrow.png";
+
+  function doBack() {
+      if(index > 0){
+          index--;
+          document.slideshow.src = imgArray[index].src;
+      }
+  }
+  function doNext() {
+      if (index < 3){
+          index++;
+          document.slideshow.src = imgArray[index].src;
+      }
+  }
+  function checkS() {
+      var pass = new Array(document.getElementById('password').value);
+        if (pass == pass.toUpperCase()){
+
+        }
+  }
+</script>
+<style>
+  body{
+    text-align: center;
+    margin-left: 20px;
+  }
+  button{
+    font-family: 'Orbitron', sans-serif;
+    margin-bottom: 20px;
+  }
+  table, tr, td, th{
+    //border: 1px solid black;
+    border-collapse: collapse;
+  }
+  table{
+    width: 100%;
+  }
+  td{
+    width: 25%;
+  }
+  input{
+    margin-bottom: 20px;
+    font-family: 'Orbitron', sans-serif;
+  }
+</style>
+<body class = "w3-blue">
+<h1 class = "w3-jumbo">
+  JavaScript Showcase
+</h1>
+<h3>
+  Jonathan Tarrant
+</h3>
+<table align="center">
+  <tr>
+    <th>
+      <h2>Changing HTML Content</h2>
+    </th>
+    <th>
+      <h2>Quizzing</h2>
+    </th>
+    <th>
+      <h2>Mouse Over</h2>
+    </th>
+    <th>
+      <h2>Slide Show</h2>
+    </th>
+  </tr>
+  <tr>
+    <td>
+      <div style="font-family: 'Raleway', sans-serif;">
+        <p id="demo" class = "w3-xlarge">
+          JavaScript can change HTML content
+        </p>
+        <button type="button" onclick="f1()" class="but">
+          Changine HTML Content
+        </button>
+        <br>
+        <button type="button" onclick="f2()" class="but">
+          Alert Message
+        </button>
+        <br>
+        <button type="button" onclick="f3()" class="but">
+          Variables and Math
+        </button>
+        <br>
+        <button type="button" onclick="document.getElementById('demo').innerHTML = 'JavaScript can change HTML content'">
+          Reset
+        </button>
+      </div>
+    </td>
+    <td>
+      <p class = "w3-large" style="margin-top: 0;">
+        What is the color of the sky?
+      </p>
+      <form id="quiz">
+        <input id="answer1" type="button" value="Blue" onclick="document.getElementById('quiz').innerHTML = 'Correct'">
+        <input id="answer2" type="button" value="Green" onclick="document.getElementById('quiz').innerHTML = 'Incorrect'"><br>
+        <input id="answer3" type="button" value="Red" onclick="document.getElementById('quiz').innerHTML = 'Incorrect'">
+        <input id="answer4" type="button" value="Purple" onclick="document.getElementById('quiz').innerHTML = 'Incorrect'">
+      </form>
+      <br>
+    </td>
+    <td>
+      <div onmouseover="f4()" onmouseout="document.getElementById('MO').style.fontSize = '16px'" id="MO" align="center">
+        This is a mouse over with a mouse out
+      </div>
+    </td>
+    <td>
+      <div align="center">
+        <p>
+          <img src="bluearrow.png" name="slideshow">
+        </p>
+        <p>
+          <button onclick="doBack()">Back</button>
+          <button onclick="doNext()">Next</button>
+        </p>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2">
+      This will test the strength of your password
+      <form style="margin-top: 10px">
+        Password: <input type="text" name="password" id="password" title="password" placeholder="Password"><br>
+        <input type="button" onclick="checkS()" value="Test" style="margin-top: -20px;">
+      </form>
+      Strength: <div id="strength"></div>
+    </td>
+    <th colspan="2">
+      <button type="button" onclick="window.location.href = 'BMI.html'">BMI Calculator</button>
+    </th>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<!--
+  Jonathan Tarrant
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>
+    Ideal Weight
+  </title>
+  <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+  <link href="https://fonts.googleapis.com/css?family=Orbitron|Raleway:400,600" rel="stylesheet">
+</head>
+<script>
+  /*
+  This function allows the user to calculate their BMI.  If there is a null value entered, the system will return
+   please enter a value for height and/or weight.
+  */
+  function bmi() {
+      var h = document.getElementById('height').value;
+      var w = document.getElementById('weight').value;
+      if (h <= 0 || w <= 0) {
+          document.getElementById('bmicalc').innerHTML = "Please enter a value for height and/or weight";
+      } else {
+          var h2 = Math.pow(h, 2);
+          var z = w / h2;
+          document.getElementById('bmicalc').innerHTML = z.toFixed(2);
+      }
+  }
+  /*
+  This function allows the user to convert from imperial to metric. This is so they can use the above calculator, as it
+  calculates BMI with Metric Values.
+   */
+  function convert() {
+      var f = Number(document.getElementById('feet').value);
+      var i = Number(document.getElementById('inches').value / 12);
+      var l = document.getElementById('lbs').value;
+      var m = (f + i) / 3.28084;
+      var k = l * .453592;
+      console.log = i;
+      document.getElementById('convertm').innerHTML = m.toFixed(2);
+      document.getElementById('convertk').innerHTML = k.toFixed(2);
+  }
+  /*
+  The following two functions allow the user to reset all of the values on the page without having to reload the page
+  itself.  It also resets the values inside of the inputs so that the user can use new values.
+   */
+  function resetcalc() {
+      document.getElementById('BMI').reset();
+      document.getElementById('bmicalc').innerHTML = "0";
+  }
+  function resetconvert() {
+      document.getElementById('conversion').reset();
+      document.getElementById('convertm').innerHTML = "0";
+      document.getElementById('convertk').innerHTML = "0";
+  }
+</script>
+<!--
+The style section allows me to tell the web page how it should look.  Using CSS allows me to style many things of the
+same element at once without having to tell each separate element what it should look like.
+-->
+<style>
+  body{
+    font-family: 'Raleway', sans-serif ;
+    margin: 15px;
+    //text-align: center;
+  }
+  h1, h3{
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+  }
+  input{
+    margin-bottom: 5px;
+    font-family: 'Raleway', sans-serif;
+  }
+  table, tr, th, td{
+    border-collapse: collapse;
+    font-family: 'Raleway', sans-serif;
+    //border: 1px solid black;
+  }
+  table{
+    width: 100%;
+  }
+  th, td{
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  button{
+    font-family: 'Raleway', sans-serif;
+  }
+  b.calc{
+    font-size: large;
+  }
+  button.convert{
+    margin-top: 10px;
+  }
+  p#bmicalc, p#convertm, p#convertk{
+    font-family: 'Orbitron', sans-serif;
+  }
+  blockquote{
+    text-align: center;
+    margin-right: 1px;
+  }
+</style>
+<body class="w3-green">
+<!--
+I used a table here so that I could have the images and the calculator all on the same line with each other, and so that
+I wouldn't have any formatting errors.
+-->
+<table>
+  <tr>
+    <td>
+      <img src="bmi-chart.png" align="left" alt="BMI chart" height="33%">
+    </td>
+    <td style="text-align: center; width: 50%">
+      <header>
+        <h1>
+          BMI calculator
+        </h1>
+        <h5>
+          There is an Imperial to Metric converter down below
+        </h5>
+      </header>
+      <!--
+      This form is where the user enters their values for height and weight in metric units.  It has 2 inputs that are
+      tied to variables in the JS above, and there is a button that runs the program at the end of the form.
+       -->
+      <form id="BMI">
+        <b>Your height (in meters)</b> <input type="number" name="height" placeholder="Height" id="height"><br>
+        <b>Your Weight (in Kilograms)</b> <input type="number" name="weight" placeholder="Weight" id="weight"><br>
+        <button type="button" name="Calculate" onclick="bmi()" class="calculate">Calculate</button>
+      </form>
+      <p>
+        <b class="calc">Your BMI:</b>
+      </p>
+      <p id="bmicalc">
+        0
+      </p>
+      <p id="chart">
+        Please refer to either of the BMI Charts to see where your BMI falls.
+      </p>
+      <button type="reset" onclick="resetcalc()">Reset</button>
+      <p id="w2"></p>
+    <!--
+    This form is where the user can input values for conversion from imperial to Metric units.
+    -->
+      <form id="conversion">
+        <h4>Imperial to Metric Conversion:</h4>
+        <b class="convert">Your Height:</b><br>
+          <input type="number" name="feet" class="imp" placeholder="Feet" id="feet"><br>
+          <input type="number" name="inches" class="imp" placeholder="Inches" id="inches"><br>
+        <b class="convert">Your Weight:</b><br>
+          <input type="text" name="lbs" class="imp" placeholder="Pounds" id="lbs"><br>
+        <button type="button" name="Convert" onclick="convert()" class="convert">Convert</button>
+      </form>
+      <p>
+        <b class="calc">Your Height in Meters:</b>
+      </p>
+      <p id="convertm">
+        0
+      </p>
+      <p>
+        <b class="calc">You Weight in Kilograms:</b>
+      </p>
+      <p id="convertk">
+        0
+      </p>
+      <button type="reset" onclick="resetconvert()">Reset</button>
+    </td>
+    <td>
+      <img src="bmi.jpg" height="45%" align="right">
+    </td>
+  </tr>
+</table>
+<br>
+<div align="center" style="margin-left: 45px">
+  <button type="button" onclick="window.location.href = 'index.html';">Back to Showcase</button>
+</div>
+<hr>
+<blockquote>
+  Jonathan Tarrant<br>
+  APCSP Per. 5<br>
+  1/24/17
+</blockquote>
+</body>
+</html>
