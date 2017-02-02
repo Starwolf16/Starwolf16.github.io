@@ -49,9 +49,23 @@
           document.slideshow.src = imgArray[index].src;
       }
   }
+  var lower = [
+      'a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z'
+  ];
+  var upper = [
+      'A, B, C, D, E, F, G, H, I, J, K , L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z'
+  ];
+  var numb = [
+      '1, 2, 3, 4, 5, 6, 7, 8, 9'];
+
+  var specchar = [
+      '!, @, #, $, %, ^, &, *, (, ), [, ], {, }, ;, :, ", \', ,, . <, >, /, ?, \\, |, ~, `'
+  ];
   function checkS() {
-      var pass = new Array(document.getElementById('password').value);
-        if (pass == pass.toUpperCase()){
+      var pass = [document.getElementById('password').value];
+        if(pass.length != 8){
+            document.getElementById('strength').innerHTML = 'Please enter a password with 8 characters';
+        } else if (pass ){
 
         }
   }
