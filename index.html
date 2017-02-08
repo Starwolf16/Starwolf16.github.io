@@ -112,8 +112,20 @@
   }
   function indexletter() {
       var word = document.getElementById('string2').value;
-      var index = document.getElementById('index').value + 1;
+      var index = Number(document.getElementById('index').value) - 1;
       document.getElementById('ind').innerHTML  = word[index];
+  }
+  function split() {
+      var string = document.getElementById('string3').value;
+      document.getElementById('split').innerHTML = string.split(' ');
+  }
+  function concat() {
+      var stri1 = document.getElementById('str1').value + ' ';
+      var stri2 = document.getElementById('str2').value;
+      document.getElementById('concated').innerHTML = stri1.concat(stri2)
+  }
+  function replace() {
+      
   }
 </script>
 <style>
@@ -128,11 +140,14 @@
     height: 30px;
   }
   table, tr, td, th{
-    border: 1px solid black;
+    //border: 1px solid black;
     border-collapse: collapse;
   }
   table{
     width: 100%;
+  }
+  th{
+    border-bottom: 1px solid black;
   }
   td{
     width: 25%;
@@ -152,16 +167,16 @@
 <table align="center">
   <tr>
     <th>
-      <h2>Changing HTML Content</h2>
+      <h3>Changing HTML Content</h3>
     </th>
     <th>
-      <h2>Quizzing</h2>
+      <h3>Quizzing</h3>
     </th>
     <th>
-      <h2>Mouse Over</h2>
+      <h3>Mouse Over</h3>
     </th>
     <th>
-      <h2>Slide Show</h2>
+      <h3>Slide Show</h3>
     </th>
   </tr>
   <tr>
@@ -216,25 +231,33 @@
       </div>
     </td>
   </tr>
-<<<<<<< HEAD
+  <tr>
+    <th>
+      <h3>Password Checker</h3>
+    </th>
+    <th>
+      <h3>BMI Calculator</h3>
+    </th>
+    <th>
+      <h3>String Length</h3>
+    </th>
+    <th>
+      <h3>String Indices</h3>
+    </th>
+  </tr>
   <tr style="height: 250px;">
     <td>
       <h3><b><em>NOT OPERATIONAL</em></b></h3>
-=======
-  <tr style= "margin-bottom:10px;">
-    <td colspan="2">
->>>>>>> origin/master
       This will test the strength of your password
       <form style="margin-top: 10px">
         Password: <input type="text" name="password" id="password" title="password" placeholder="Password"><br>
         <button type="button" onclick="checkS()" value="Test" style="margin-top: -20px;">Test</button>
       </form>
-      <!--<button type="button" onclick="checkS()">Test</button>-->
       Strength: <div id="strength"></div>
     </td>
-    <th>
-      <button type="button" onclick="window.location.href = 'BMI.html'">BMI Calculator</button>
-    </th>
+    <td>
+      <button type="button" onclick="window.location.href = 'BMI.html'"><b>BMI Calculator</b></button>
+    </td>
     <td>
       <form>
         <input type="text" placeholder="Please enter a word" id="string"><br>
@@ -249,9 +272,38 @@
         <input type="text" id="string2" placeholder="Please enter a word">
         <input type="number" id="index" placeholder="Index of letter">
       </form>
-      Click the button below for the letter of an index<br>(Keep in mind that zero is the first letter):
+      Click the button below for the letter of an index:
       <button type="button" onclick="indexletter()" style="margin-top: 7px">Get letter</button>
       <div id="ind">
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      <h3>String Split</h3>
+    </th>
+    <th>
+      <h3>String Concatenation</h3>
+    </th>
+  </tr>
+  <tr style="height: 250px">
+    <td>
+      <form>
+        <input type="text" placeholder="Please Enter a sentence" id="string3">
+      </form>
+      Click the button below to split the sting:
+      <button type="button" onclick="split()">Split the String</button>
+      <div id="split">
+      </div>
+    </td>
+    <td>
+      <form>
+        <input type="text" placeholder="String 1" id="str1">
+        <input type="text" placeholder="String 2" id="str2">
+      </form>
+      Click the button to join the strings:
+      <button type="button" onclick="concat()">Join the Stings</button>
+      <div id="concated">
       </div>
     </td>
   </tr>
