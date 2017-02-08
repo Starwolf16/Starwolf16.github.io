@@ -49,25 +49,71 @@
           document.slideshow.src = imgArray[index].src;
       }
   }
-  var lower = [
-      'a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z'
-  ];
-  var upper = [
-      'A, B, C, D, E, F, G, H, I, J, K , L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z'
-  ];
-  var numb = [
-      '1, 2, 3, 4, 5, 6, 7, 8, 9'];
-
-  var specchar = [
-      '!, @, #, $, %, ^, &, *, (, ), [, ], {, }, ;, :, ", \', ,, . <, >, /, ?, \\, |, ~, `'
-  ];
   function checkS() {
-      var pass = [document.getElementById('password').value];
-        if(pass.length != 8){
-            document.getElementById('strength').innerHTML = 'Please enter a password with 8 characters';
-        } else if (pass ){
-
-        }
+      var lower = [
+          "a", "b", "c", "d", 'e','f','g','h','i','j','k','l',
+          'm','n','o','p','q','r','s','t','u','v','w','x','y','z'
+      ];
+      var upper = [
+          'A','B','C','D','E','F','G','H','I','J','K','L',
+          'M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'
+      ];
+      var numb = [
+          '0','1','2','3','4','5','6','7','8','9'
+      ];
+      var spec = [
+          '!','@','#','$','%','^','&','*','(',')','_','-','+','=','{','[',':',';','>','.','<',',','?'
+      ];
+      //var y = index;
+      var low = true;
+      var up = true;
+      var num = true;
+      var speci = true;
+      var stre = [];
+      var strength = ['weak', 'medium', 'strong', 'very strong'];
+      var pass = document.getElementById('password').value;
+      //stre.push("yes");
+      if (pass.length == 8){
+          for (var index = 0; index <= pass.length; index++){
+              if (pass[index] in lower){
+                  window.alert('yes');
+                  //document.getElementById('strength').innerHTML = pass[index];
+                  if (low == true){
+                      stre.push("yes");
+                      low = false;
+                  }
+              }else if (pass[index] in upper){
+                  if (up == true){
+                      stre.push("yes");
+                      up = false;
+                  }
+              }else  if (pass[index] in numb){
+                  if (num == true){
+                      stre.push("yes");
+                      num = false;
+                  }
+              }else if (pass[index] in spec){
+                  if (speci == true){
+                      stre.push("yes");
+                      speci = false;
+                  }
+              } else {
+                  window.alert('Not Found');
+              }
+          }
+          document.getElementById('strength').innerHTML = stre;//.length + stre;//'Your password is ' + strength[stre.length - 1];
+      } else {
+          document.getElementById('strength').innerHTML = 'Nope';
+      }
+  }
+  function length(){
+      var word = document.getElementById('string').value;
+      document.getElementById('word').innerHTML = word.length;
+  }
+  function indexletter() {
+      var word = document.getElementById('string2').value;
+      var index = document.getElementById('index').value + 1;
+      document.getElementById('ind').innerHTML  = word[index];
   }
 </script>
 <style>
@@ -125,7 +171,7 @@
           JavaScript can change HTML content
         </p>
         <button type="button" onclick="f1()" class="but">
-          Changine HTML Content
+          Changing HTML Content
         </button>
         <br>
         <button type="button" onclick="f2()" class="but">
@@ -170,18 +216,39 @@
       </div>
     </td>
   </tr>
-  <tr>
-    <td colspan="2">
+  <tr style="height: 250px;">
+    <td>
+      <h3><b><em>NOT OPERATIONAL</em></b></h3>
       This will test the strength of your password
       <form style="margin-top: 10px">
         Password: <input type="text" name="password" id="password" title="password" placeholder="Password"><br>
-        <input type="button" onclick="checkS()" value="Test" style="margin-top: -20px;">
+        <button type="button" onclick="checkS()" value="Test" style="margin-top: -20px;">Test</button>
       </form>
+      <!--<button type="button" onclick="checkS()">Test</button>-->
       Strength: <div id="strength"></div>
     </td>
-    <th colspan="2">
+    <th>
       <button type="button" onclick="window.location.href = 'BMI.html'">BMI Calculator</button>
     </th>
+    <td>
+      <form>
+        <input type="text" placeholder="Please enter a word" id="string"><br>
+        Click the button below for the length of the word:<br>
+      </form>
+      <button type="button" onclick="length()" style="margin-top: 7px">Get the Length</button>
+      <div id="word">
+      </div>
+    </td>
+    <td>
+      <form>
+        <input type="text" id="string2" placeholder="Please enter a word">
+        <input type="number" id="index" placeholder="Index of letter">
+      </form>
+      Click the button below for the letter of an index<br>(Keep in mind that zero is the first letter):
+      <button type="button" onclick="indexletter()" style="margin-top: 7px">Get letter</button>
+      <div id="ind">
+      </div>
+    </td>
   </tr>
 </table>
 </body>
