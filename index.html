@@ -125,7 +125,9 @@
       document.getElementById('concated').innerHTML = stri1.concat(stri2)
   }
   function replace() {
-      
+      var OSvar = document.getElementById('OS').value;
+      var RSvar = document.getElementById('RS').value;
+      document.getElementById('OS').innerHTML =  OSvar.replace('There', RSvar);
   }
 </script>
 <style>
@@ -296,7 +298,7 @@
       <form>
         <input type="text" placeholder="Please Enter a sentence" id="string3">
       </form>
-      Click the button below to split the sting:
+      Click the button below to split the sting:<br>
       <button type="button" onclick="split()">Split the String</button>
       <div id="split">
       </div>
@@ -312,7 +314,15 @@
       </div>
     </td>
     <td>
-
+      <p id="OS">Hello There</p>
+      <form>
+        <!--<input type="text" placeholder="Original String" id="OS">-->
+        <input type="text" placeholder="Replacement String" id="RS">
+      </form>
+      Click this button to replace a word in the above string:
+      <button type="button" onclick="replace()">Replace String</button>
+      <div id="replaced">
+      </div>
     </td>
   </tr>
 </table>
