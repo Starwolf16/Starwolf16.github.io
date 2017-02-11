@@ -10,19 +10,22 @@
   <link href="https://fonts.googleapis.com/css?family=Orbitron|Raleway" rel="stylesheet">
 </head>
 <script>
-  function f1() {
+  function change() {
       document.getElementById('demo').innerHTML='Changing HTML Content';
   }
-  function f2() {
-      window.alert('This is a pop-up created with the button');
+  function walert() {
+      window.alert('This is a pop up message');
   }
-  function f3() {
+  function maths() {
       var x = 20;
       var y = 77;
       document.getElementById('demo').innerHTML =   x + y
   }
-  function f4() {
+  function fontl() {
       document.getElementById('MO').style.fontSize = "45px";
+  }
+  function font() {
+      document.getElementById('MO').style.fontSize = '16px';
   }
 
   var imgArray = new Array(4);
@@ -125,9 +128,27 @@
       document.getElementById('concated').innerHTML = stri1.concat(stri2)
   }
   function replace() {
-      var OSvar = document.getElementById('OS').value;
+      var OSvar = 'Hello there person';
       var RSvar = document.getElementById('RS').value;
-      document.getElementById('OS').innerHTML =  OSvar.replace('There', RSvar);
+      document.getElementById('OS').innerHTML = OSvar.replace('person', RSvar);
+  }
+  var orig = 'String Methods can change the case of parts of the string';
+  function cap() {
+      document.getElementById('case').innerHTML = orig.toUpperCase();
+  }
+  function low() {
+      document.getElementById('case').innerHTML = orig.toLowerCase();
+  }
+  function cap1() {
+      var case1 = orig.charAt(0) + orig.slice(1);
+      document.getElementById('case').innerHTML = case1;
+
+  }
+  function substr() {
+      var sub = 'This is a sub string method';
+      var start = document.getElementById('star').value;
+      var end = document.getElementById('ending').value;
+      document.getElementById('substring').innerHTML = sub.substr(start, end);
   }
 </script>
 <style>
@@ -142,6 +163,7 @@
     font-family: 'Orbitron', sans-serif;
     margin-bottom: 20px;
     height: 30px;
+    margin-top: 7px;
   }
   table, tr, td, th{
     //border: 1px solid black;
@@ -160,51 +182,60 @@
     margin-bottom: 20px;
     font-family: 'Orbitron', sans-serif;
   }
+  th.line{
+    border-right: 1px solid black;
+  }
 </style>
 <body class = "w3-blue">
-<h1 class = "w3-jumbo" style="font-size: 48px">
-  JavaScript Showcase
-</h1>
-<h3>
-  Jonathan Tarrant
-</h3>
 <table align="center">
-  <tr>
-    <th>
+  <tr id="title">
+    <td colspan="4">
+      <h1 class = "w3-jumbo" style="font-size: 48px">
+        JavaScript Showcase
+      </h1>
+    </td>
+  </tr>
+  <tr id="Name">
+    <td colspan="4">
+      <h3>
+        Jonathan Tarrant
+      </h3>
+    </td>
+  </tr>
+  <tr id="Row 1 Header">
+    <th class="line">
       <h3>Changing HTML Content</h3>
     </th>
-    <th>
+    <th class="line">
       <h3>Quizzing</h3>
     </th>
-    <th>
+    <th class="line">
       <h3>Mouse Over</h3>
     </th>
     <th>
       <h3>Slide Show</h3>
     </th>
   </tr>
-  <tr>
+  <tr id="Row 1">
     <td>
-      <div style="font-family: 'Raleway', sans-serif;">
         <p id="demo" class = "w3-xlarge">
           JavaScript can change HTML content
         </p>
-        <button type="button" onclick="f1()" class="but">
+        <button type="button" onclick="change()" class="but">
           Changing HTML Content
         </button>
         <br>
-        <button type="button" onclick="f2()" class="but">
+        <button type="button" onclick="walert()" id="but">
           Alert Message
         </button>
         <br>
-        <button type="button" onclick="f3()" class="but">
+        <button type="button" onclick="maths()" class="but">
           Variables and Math
         </button>
         <br>
         <button type="button" onclick="document.getElementById('demo').innerHTML = 'JavaScript can change HTML content'">
           Reset
         </button>
-      </div>
     </td>
     <td>
       <p class = "w3-large" style="margin-top: 0;">
@@ -219,7 +250,7 @@
       <br>
     </td>
     <td>
-      <div onmouseover="f4()" onmouseout="document.getElementById('MO').style.fontSize = '16px'" id="MO" align="center">
+      <div onmouseover="fontl()" onmouseout="font()" id="MO" align="center">
         This is a mouse over with a mouse out
       </div>
     </td>
@@ -235,21 +266,21 @@
       </div>
     </td>
   </tr>
-  <tr>
-    <th>
+  <tr id="Row 2 Header">
+    <th class="line">
       <h3>Password Checker</h3>
     </th>
-    <th>
+    <th class="line">
       <h3>BMI Calculator</h3>
     </th>
-    <th>
+    <th class="line">
       <h3>String Length</h3>
     </th>
     <th>
       <h3>String Indices</h3>
     </th>
   </tr>
-  <tr style= "margin-bottom:10px; height: 250px;">
+  <tr id="Row 2" style= "margin-bottom:10px; height: 250px;">
     <td>
       <h3><b><em>NOT OPERATIONAL</em></b></h3>
       This will test the strength of your password
@@ -282,18 +313,21 @@
       </div>
     </td>
   </tr>
-  <tr>
-    <th>
+  <tr id="Row 3 Header">
+    <th class="line">
       <h3>String Split</h3>
     </th>
-    <th>
+    <th class="line">
       <h3>String Concatenation</h3>
     </th>
-    <th>
+    <th class="line">
       <h3>String Replacement</h3>
     </th>
+    <th>
+      <h3>String Case Changing</h3>
+    </th>
   </tr>
-  <tr style="height: 250px">
+  <tr id="Row 3" style="height: 250px">
     <td>
       <form>
         <input type="text" placeholder="Please Enter a sentence" id="string3">
@@ -314,14 +348,40 @@
       </div>
     </td>
     <td>
-      <p id="OS">Hello There</p>
+      <p id="OS">Hello there person</p>
       <form>
-        <!--<input type="text" placeholder="Original String" id="OS">-->
-        <input type="text" placeholder="Replacement String" id="RS">
+        <input type="text" placeholder="Your Name" id="RS">
       </form>
-      Click this button to replace a word in the above string:
+      Click this button to replace person  in the above string:<br>
       <button type="button" onclick="replace()">Replace String</button>
       <div id="replaced">
+      </div>
+    </td>
+    <td>
+      <p id="case"> String Methods can change the case of parts of the string</p><br>
+      Click the buttons below to change the case:<br>
+      <button type="button" onclick="cap()">Make all Upper Case</button><br>
+      <button type="button" onclick="low()">Make all Lower Case</button><br>
+      <button type="button" onclick="cap1()">Make the first letter Capital</button>
+    </td>
+  </tr>
+  <tr>
+    <th class="line">
+      <h3>
+        Sub String
+      </h3>
+    </th>
+  </tr>
+  <tr>
+    <td>
+      This is a substring method<br>
+      <form>
+        <input type="number" placeholder="Start" id="star"><br>
+        <input type="number" placeholder="End" id="ending"><br>
+      </form>
+      Click the button below to get the sub string:<br>
+      <button type="button" onclick="substr()">Get the Substring</button>
+      <div id="substring">
       </div>
     </td>
   </tr>
