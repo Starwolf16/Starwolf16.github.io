@@ -5,7 +5,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>JavaScript Trial</title>
+  <title>JavaScript Showcase</title>
   <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
   <link href="https://fonts.googleapis.com/css?family=Orbitron|Raleway" rel="stylesheet">
 </head>
@@ -78,8 +78,8 @@
       //stre.push("yes");
       if (pass.length == 8){
           for (var index = 0; index <= pass.length; index++){
-              if (pass[index] in lower){
-                  window.alert('yes');
+              if (pass[index] in lower[index]){
+                  window.alert(lower[index]);
                   //document.getElementById('strength').innerHTML = pass[index];
                   if (low == true){
                       stre.push("yes");
