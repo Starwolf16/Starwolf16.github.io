@@ -146,8 +146,8 @@
   }
   function substr() {
       var sub = 'This is a sub string method';
-      var start = document.getElementById('star').value;
-      var end = document.getElementById('ending').value;
+      var start = document.getElementById('star').value - 1;
+      var end = document.getElementById('ending').value - 1;
       document.getElementById('substring').innerHTML = sub.substr(start, end);
   }
 </script>
