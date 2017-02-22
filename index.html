@@ -52,7 +52,17 @@
           document.slideshow.src = imgArray[index].src;
       }
   }
-  function checkS() {
+  setInterval(function() {flashtext()}, 600);
+  function flashtext() {
+      var flash = document.getElementById('NO').style.color;
+
+      if (flash === 'white') {
+          document.getElementById('NO').style.color = 'red';
+      } else {
+          document.getElementById('NO').style.color = 'white';
+      }
+  }
+  function checkS()   {
       var lower = [
           "a", "b", "c", "d", 'e','f','g','h','i','j','k','l',
           'm','n','o','p','q','r','s','t','u','v','w','x','y','z'
@@ -282,7 +292,7 @@
   </tr>
   <tr id="Row 2" style= "margin-bottom:10px; height: 250px;">
     <td>
-      <h3><b><em>NOT OPERATIONAL</em></b></h3>
+      <h3><b><em id="NO">NOT OPERATIONAL</em></b></h3>
       This will test the strength of your password
       <form style="margin-top: 10px">
         Password: <input type="text" name="password" id="password" title="password" placeholder="Password"><br>
@@ -339,7 +349,7 @@
     </td>
     <td>
       <form>
-        <input type="text" placeholder="String 1" id="str1">
+        <input type="text" placeholder="String 1" id="str1"><br>
         <input type="text" placeholder="String 2" id="str2">
       </form>
       Click the button to join the strings:<br>
@@ -365,14 +375,14 @@
       <button type="button" onclick="cap1()">Make the first letter Capital</button>
     </td>
   </tr>
-  <tr>
+  <tr id="Row 4 Header">
     <th class="line">
       <h3>
         Sub String
       </h3>
     </th>
   </tr>
-  <tr>
+  <tr id="Row 4">
     <td>
       This is a substring method<br>
       <form>
