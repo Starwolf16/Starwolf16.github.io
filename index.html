@@ -52,17 +52,6 @@
           document.slideshow.src = imgArray[index].src;
       }
   }
-  setInterval(function() {
-      flashtext()
-  }, 600);
-  function flashtext() {
-      var flash = document.getElementById('NO').style.color;
-      if (flash === 'white') {
-          document.getElementById('NO').style.color = 'red';
-      } else {
-          document.getElementById('NO').style.color = 'white';
-      }
-  }
   function checkS()   {
       var lower = [
           "a", "b", "c", "d", 'e','f','g','h','i','j','k','l',
@@ -85,34 +74,23 @@
       var stre = [];
       var strength = ['weak', 'medium', 'strong', 'very strong'];
       var pass = document.getElementById('password').value;
-      if (pass.length == 8){
-          for (var index = 0; index <= pass.length; index++){
-              if (pass[index] in lower[index]){
-                  window.alert(lower[index]);
-                  if (low == true){
-                      stre.push("yes");
-                      low = false;
-                  }
-              }else if (pass[index] in upper){
-                  if (up == true){
-                      stre.push("yes");
-                      up = false;
-                  }
-              }else  if (pass[index] in numb){
-                  if (num == true){
-                      stre.push("yes");
-                      num = false;
-                  }
-              }else if (pass[index] in spec){
-                  if (speci == true){
-                      stre.push("yes");
-                      speci = false;
-                  }
-              } else {
-                  window.alert('Not Found');
+      if (pass.length >= 8){
+          for (var i = 0; i <= pass.length; i++){
+              if (pass.indexOf(i) in lower && low == true) {
+                  stre.push("yes");
+                  low = false;
+              } else if (pass.indexOf(i) in upper && up == true){
+                  stre.push("yes");
+                  up = false;
+              } else  if (pass.indexOf(i) in numb && num == true){
+                  stre.push("yes");
+                  num = false;
+              } else if (pass.indexOf(i) in spec && speci == true){
+                  stre.push("yes");
+                  speci = false;
               }
           }
-          document.getElementById('strength').innerHTML = 'Your password is ' + strength[stre.length - 1];
+          document.getElementById('strength').innerHTML = strength[stre.length ];
       } else {
           document.getElementById('strength').innerHTML = 'Your Password needs to be 8 characters long';
       }
@@ -193,7 +171,7 @@
   th.line{
     border-right: 1px solid black;
   }
-  button {
+  button, input[type=button] {
     background-color: white;
     color: black;
     border: 2px solid #3f51b5;
@@ -201,13 +179,17 @@
     vertical-align: top;
     text-decoration: none;
     font-size: 16px;
-    padding: 15px;
     padding-bottom: 30px;
-    padding-top: 5px;
+    padding-top: 7px;
     transition-duration: .4s;
     cursor: pointer;
+    border-radius: 12px;
   }
-  button:hover {
+  input[type=button] {
+    padding-bottom: 7px;
+  }
+
+  button:hover, input[type=button]:hover {
     background-color: #3f51b5;
     color: white;
   }
@@ -216,6 +198,9 @@
     padding-left: 5px;
     padding-top: 5px;
     padding-bottom: 30px;
+  }
+  #Pass:hover {
+
   }
 </style>
 <body class = "w3-blue">
@@ -279,6 +264,7 @@
         <input id="answer3" type="button" value="Red" onclick="document.getElementById('quiz').innerHTML = 'Incorrect'">
         <input id="answer4" type="button" value="Purple" onclick="document.getElementById('quiz').innerHTML = 'Incorrect'">
       </form>
+      <button type="button" onclick="window.location.reload();">Try Again</button>
       <br>
     </td>
     <td>
@@ -314,16 +300,16 @@
   </tr>
   <tr id="Row 2" style= "margin-bottom:10px; height: 250px;">
     <td>
-      <h3><b><em id="NO">NOT OPERATIONAL</em></b></h3>
       This will test the strength of your password
       <form style="margin-top: 10px">
         Password: <input type="text" name="password" id="password" title="password" placeholder="Password"><br>
-        <button type="button" onclick="checkS()" value="Test" style="margin-top: -20px;">Test</button>
       </form>
-      Strength: <div id="strength"></div>
+      <button type="button" onclick="checkS()" value="Test">Test</button><br>
+      Strength: <br>
+      Your Password is <span id="strength"></span>
     </td>
     <td>
-      <button type="button" onclick="window.location.href = 'BMI.html'"><b>BMI Calculator</b></button>
+      <a href="BMI.html" target="_blank"><button type="button"><b>BMI Calculator</b></button></a>
     </td>
     <td>
       <form>
@@ -403,6 +389,9 @@
         Sub String
       </h3>
     </th>
+    <th>
+      <h3>General Core Subject Quiz</h3>
+    </th>
   </tr>
   <tr id="Row 4">
     <td>
@@ -415,6 +404,13 @@
       <button type="button" onclick="substr()">Get the Substring</button>
       <div id="substring">
       </div>
+    </td>
+    <td>
+      <a href="Create_PT_HTML.html" target="_blank">
+        <button id="GCSQ">
+          General Core Subject Quiz
+        </button>
+      </a>
     </td>
   </tr>
 </table>
