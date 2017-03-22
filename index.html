@@ -71,26 +71,26 @@
       var up = true;
       var num = true;
       var speci = true;
-      var stre = [];
+      var stre = 0;
       var strength = ['weak', 'medium', 'strong', 'very strong'];
       var pass = document.getElementById('password').value;
       if (pass.length >= 8){
           for (var i = 0; i <= pass.length; i++){
               if (pass.indexOf(i) in lower && low == true) {
-                  stre.push("yes");
                   low = false;
+                  stre = stre + 1;
               } else if (pass.indexOf(i) in upper && up == true){
-                  stre.push("yes");
                   up = false;
+                  stre = stre + 1;
               } else  if (pass.indexOf(i) in numb && num == true){
-                  stre.push("yes");
                   num = false;
+                  stre = stre + 1;
               } else if (pass.indexOf(i) in spec && speci == true){
-                  stre.push("yes");
                   speci = false;
+                  stre = stre + 1;
               }
           }
-          document.getElementById('strength').innerHTML = strength[stre.length ];
+          document.getElementById('strength').innerHTML = strength[stre - 1];
       } else {
           document.getElementById('strength').innerHTML = 'Your Password needs to be 8 characters long';
       }
@@ -194,11 +194,29 @@
     color: white;
   }
   #cap{
-    padding: 30px;
+    padding-top: 10px;
+    padding-bottom: 30px;
   }
-  #Pass:hover {
+  *:focus {
+    outline: none;
+  }
+  input {
+    background-color: transparent;
+    border: transparent;
+    border-bottom: 2px solid black;
+    transition: .5s ease-out;
+    text-align: center;
+  }
+  input:focus {
+    border-top: 2px solid black;
+    border-right: 2px solid black;
+    border-left: 2px solid black;
+  }
+  ::-webkit-input-placeholder {
+    text-align: center;
+    color: black;
+  }
 
-  }
 </style>
 <body class = "w3-blue">
 <table align="center">
@@ -255,13 +273,14 @@
       <p class = "w3-large" style="margin-top: 0;">
         What is the color of the sky?
       </p>
-      <form id="quiz">
+      <form>
         <input id="answer1" type="button" value="Blue" onclick="document.getElementById('quiz').innerHTML = 'Correct'">
         <input id="answer2" type="button" value="Green" onclick="document.getElementById('quiz').innerHTML = 'Incorrect'"><br>
         <input id="answer3" type="button" value="Red" onclick="document.getElementById('quiz').innerHTML = 'Incorrect'">
         <input id="answer4" type="button" value="Purple" onclick="document.getElementById('quiz').innerHTML = 'Incorrect'">
       </form>
-      <button type="button" onclick="window.location.reload();">Try Again</button>
+      <button type="button" onclick="document.getElementById('quiz').innerHTML = '<br>'">Try Again</button><br>
+      <div id="quiz"><br></div>
       <br>
     </td>
     <td>
@@ -382,12 +401,16 @@
   </tr>
   <tr id="Row 4 Header">
     <th class="line">
+    </th>
+    <th class="line">
       <h3>
         Sub String
       </h3>
     </th>
-    <th>
+    <th class="line">
       <h3>General Core Subject Quiz</h3>
+    </th>
+    <th>
     </th>
   </tr>
   <tr id="Row 4">

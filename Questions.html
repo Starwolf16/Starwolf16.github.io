@@ -12,18 +12,22 @@
   General Core Subject Quiz
 </h1>
 <h4>
-  Please answer at least 12 questions for accurate results
+  Please answer at least 12 questions for accurate results.<br>
 </h4>
+<h5>
+  IMPORTANT: WHEN YOU WANT TO GRADE THE QUIZ, DO NOT CLICK NEXT QUESTION BEFORE CLICKING SCORE QUIZ
+</h5>
 <hr>
 <form>
   Name:<br>
   <input type="text" id="name" placeholder="Your name">
-</form>
+</form><br>
+<b>Spelling Matters. You will NOT get credit for misspelled answers</b>
 <p>
   Your Question:
 </p>
 <div id="q">
-  a<!--<button id="getq" onclick="qtype()">Click for Question</button>-->
+  a
 </div>
 <form id="ans">
   <input type="text" id="answer" placeholder="Your Answer"><br>
@@ -33,6 +37,7 @@ Your answer was: <div id="check"><br></div><br>
 <button type="button" id="next" onclick="qtype()">Next Question</button><br>
 <button type="button" id="end" onclick="end()">Score Quiz</button>
 <button type="button" id="reload" onclick="window.location.reload()">Take it Again</button><br>
-<div id="sco"></div>
+<div id="sco"><br></div><br>
+<b>DO NOT CLICK NEXT QUESTION BEFORE CLICKING SCORE QUIZ WHEN YOU ARE READY TO GET YOUR SCORE</b>
 </body>
 </html>

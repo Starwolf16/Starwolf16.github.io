@@ -10,7 +10,7 @@ var q1 = [
 var q2 = [
     'What part of speech is the word \'for\'?',
     'What part of the sentence does the main noun go in?',
-    'Is a fantasy non-fiction or fiction',
+    'Does a fantasy book fall under non-fiction or fiction?',
     'What part of speech is the word \'person\'?'
 ];
 var q3 = [
@@ -23,7 +23,7 @@ var q4 = [
     'What year did Columbus sail the ocean blue?',
     'What Ancient country (IE: China, Rome, Persia, Mongilia) is still around today?',
     'What Roman Emperor made Roman Catholicism the official religion of the Roman Empire?',
-    'What Country first settled North America?'
+    'What Country first settled the USA?'
 ];
 
 var x;
@@ -31,9 +31,11 @@ var y;
 var ques;
 var ans;
 var uans;
+var uansr;
 var cor = 0;
 var quesa = 0;
 var score;
+var name;
 
 function qtype() {
     x = Math.floor(Math.random() * 4) + 1;
@@ -52,17 +54,16 @@ function qtype() {
 }
 
 function qans() {
-    y = Math.floor(Math.random() * 4) + 1;
-    if (y == 1) {
-        q1a();
-    } else if (y == 2) {
-        q2a();
-    } else if (y == 3) {
-        q3a();
-    } else if (y == 4) {
-        q4a();
+    uansr = document.getElementById('answer').value;
+    uans = uansr.toLowerCase();
+    if (uans == ans) {
+        cor = cor + 1;
+        document.getElementById('check').innerHTML = "Correct";
+    } else if (uans != ans) {
+        document.getElementById('check').innerHTML = "Wrong";
     }
 }
+
 
 function question1() {
     ques = Math.floor(Math.random() * 4) + 1;
@@ -77,16 +78,6 @@ function question1() {
     }
     document.getElementById('q').innerHTML = q1[ques - 1];
     quesa = quesa + 1;
-}
-
-function q1a() {
-    uans = document.getElementById('answer').value;
-    if (uans == ans) {
-        cor = cor + 1;
-        document.getElementById('check').innerHTML = "Right";
-    } else if (uans != ans) {
-        document.getElementById('check').innerHTML = "Wrong";
-    }
 }
 
 function question2() {
@@ -104,16 +95,6 @@ function question2() {
     quesa = quesa + 1;
 }
 
-function q2a() {
-    uans = document.getElementById('answer').value;
-    if (uans == ans) {
-        cor = cor + 1;
-        document.getElementById('check').innerHTML = "Right";
-    } else if (uans != ans) {
-        document.getElementById('check').innerHTML = "Wrong";
-    }
-}
-
 function question3() {
     ques = Math.floor(Math.random() * 4) + 1;
     if (ques == 1) {
@@ -129,43 +110,25 @@ function question3() {
     quesa = quesa + 1;
 }
 
-function q3a() {
-    uans = document.getElementById('answer').value;
-    if (uans == ans) {
-        cor = cor + 1;
-        document.getElementById('check').innerHTML = "Right";
-    } else if (uans != ans) {
-        document.getElementById('check').innerHTML = "Wrong";
-    }
-}
-
 function question4() {
     ques = Math.floor(Math.random() * 4) + 1;
     if (ques == 1) {
         ans = '1492';
     } else if (ques == 2) {
-        ans = 'China';
+        ans = 'china';
     } else if (ques == 3) {
-        ans = 'Constantine';
+        ans = 'constantine';
     } else if (ques == 4) {
-        ans = 'Great Britain';
+        ans = 'great britain';
     }
     document.getElementById('q').innerHTML = q4[ques - 1];
     quesa = quesa + 1;
 }
-function q4a() {
-    uans = document.getElementById('answer').value;
-    if (uans == ans) {
-        cor = cor + 1;
-        document.getElementById('check').innerHTML = "Right";
-    } else if (uans != ans) {
-        document.getElementById('check').innerHTML = "Wrong";
-    }
-}
 
 function end() {
+    name = document.getElementById('name').value;
     score = (cor / quesa) * 100;
-    document.getElementById('sco').innerHTML = 'Your Score is ' + Math.round(score);
+    document.getElementById('sco').innerHTML = name + ', you scored a ' + Math.round(score);
 }
 
 function no() {
