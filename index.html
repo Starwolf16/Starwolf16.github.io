@@ -1,28 +1,438 @@
 <!DOCTYPE html>
+<!--
+  Jonathan Tarrant
+-->
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Interactive Story</title>
-  <link rel="stylesheet" href="main.css">
-  <link rel="script" href="script.js">
-  <link href="https://fonts.googleapis.com/css?family=Encode+Sans+Condensed" rel="stylesheet">
+  <title>JavaScript Showcase</title>
+  <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+  <link href="https://fonts.googleapis.com/css?family=Orbitron|Raleway" rel="stylesheet">
 </head>
-<body onload="name()">
-<h3>Kyrian</h3>
-<hr>
+<script>
+    function change() {
+        document.getElementById('demo').innerHTML='Changing HTML Content';
+    }
+    function walert() {
+        window.alert('This is a pop up message');
+    }
+    function maths() {
+        var x = 20;
+        var y = 77;
+        document.getElementById('demo').innerHTML =   x + y
+    }
+    function fontl() {
+        document.getElementById('MO').style.fontSize = "45px";
+    }
+    function font() {
+        document.getElementById('MO').style.fontSize = '16px';
+    }
+
+    var imgArray = new Array(4);
+    var index = 0;
+
+    imgArray[0] = new Image;
+    imgArray[0].src = "bluearrow.png";
+    imgArray[1] = new Image;
+    imgArray[1].src = "redarrow.png";
+    imgArray[2] = new Image;
+    imgArray[2].src = "greenarrow.png";
+    imgArray[3] = new Image;
+    imgArray[3].src = "yellowarrow.png";
+
+    function doBack() {
+        if(index > 0){
+            index--;
+            document.slideshow.src = imgArray[index].src;
+        }
+    }
+    function doNext() {
+        if (index < 3){
+            index++;
+            document.slideshow.src = imgArray[index].src;
+        }
+    }
+    function checkS()   {
+        var lower = [
+            "a", "b", "c", "d", 'e','f','g','h','i','j','k','l',
+            'm','n','o','p','q','r','s','t','u','v','w','x','y','z'
+        ];
+        var upper = [
+            'A','B','C','D','E','F','G','H','I','J','K','L',
+            'M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'
+        ];
+        var numb = [
+            '0','1','2','3','4','5','6','7','8','9'
+        ];
+        var spec = [
+            '!','@','#','$','%','^','&','*','(',')','_','-','+','=','{','[',':',';','>','.','<',',','?'
+        ];
+        var low = true;
+        var up = true;
+        var num = true;
+        var speci = true;
+        var stre = 0;
+        var strength = ['weak', 'medium', 'strong', 'very strong'];
+        var pass = document.getElementById('password').value;
+        if (pass.length >= 8){
+            for (var i = 0; i <= pass.length; i++){
+                if (pass.indexOf(i) in lower && low == true) {
+                    low = false;
+                    stre = stre + 1;
+                } else if (pass.indexOf(i) in upper && up == true){
+                    up = false;
+                    stre = stre + 1;
+                } else  if (pass.indexOf(i) in numb && num == true){
+                    num = false;
+                    stre = stre + 1;
+                } else if (pass.indexOf(i) in spec && speci == true){
+                    speci = false;
+                    stre = stre + 1;
+                }
+            }
+            document.getElementById('strength').innerHTML = strength[stre - 1];
+        } else {
+            document.getElementById('strength').innerHTML = 'Your Password needs to be 8 characters long';
+        }
+    }
+    function length(){
+        var word = document.getElementById('string').value;
+        document.getElementById('word').innerHTML = word.length;
+    }
+    function indexletter() {
+        var word = document.getElementById('string2').value;
+        var index = Number(document.getElementById('index').value) - 1;
+        document.getElementById('ind').innerHTML  = word[index];
+    }
+    function split() {
+        var string = document.getElementById('string3').value;
+        document.getElementById('split').innerHTML = string.split(' ');
+    }
+    function concat() {
+        var stri1 = document.getElementById('str1').value + ' ';
+        var stri2 = document.getElementById('str2').value;
+        document.getElementById('concated').innerHTML = stri1.concat(stri2)
+    }
+    function replace() {
+        var OSvar = 'Hello there person';
+        var RSvar = document.getElementById('RS').value;
+        document.getElementById('OS').innerHTML = OSvar.replace('person', RSvar);
+    }
+    var orig = 'String methods can change the case of parts of the string';
+    function cap() {
+        document.getElementById('case').innerHTML = orig.toUpperCase();
+    }
+    function low() {
+        document.getElementById('case').innerHTML = orig.toLowerCase();
+    }
+    function cap1() {
+        document.getElementById('case').innerHTML = orig.charAt(0) + orig.slice(1);
+
+    }
+    function substr() {
+        var sub = 'This is a sub string method';
+        var start = document.getElementById('star').value - 1;
+        var end = document.getElementById('ending').value - 1;
+        document.getElementById('substring').innerHTML = sub.substr(start, end);
+    }
+</script>
+<style>
+  body{
+    text-align: center;
+    margin-left: 20px;
+    background-color: #2196F3;
+    font-family: 'Raleway', sans-serif;
+    color: white;
+  }
+  button{
+    font-family: 'Orbitron', sans-serif;
+    margin-bottom: 20px;
+    height: 30px;
+    margin-top: 7px;
+  }
+  table, tr, td, th{
+  //border: 1px solid black;
+    border-collapse: collapse;
+  }
+  table{
+    width: 100%;
+  }
+  th{
+    border-bottom: 1px solid black;
+  }
+  td{
+    width: 25%;
+  }
+  input{
+    margin-bottom: 20px;
+    font-family: 'Orbitron', sans-serif;
+  }
+  th.line{
+    border-right: 1px solid black;
+  }
+  button, input[type=button] {
+    background-color: white;
+    color: black;
+    border: 2px solid #3f51b5;
+    text-align: center;
+    vertical-align: top;
+    text-decoration: none;
+    font-size: 16px;
+    padding-bottom: 30px;
+    padding-top: 7px;
+    transition-duration: .4s;
+    cursor: pointer;
+    border-radius: 12px;
+  }
+  input[type=button] {
+    padding-bottom: 7px;
+  }
+
+  button:hover, input[type=button]:hover {
+    background-color: #3f51b5;
+    color: white;
+  }
+  #cap{
+    padding-top: 10px;
+    padding-bottom: 30px;
+  }
+  *:focus {
+    outline: none;
+  }
+  input {
+    background-color: transparent;
+    border: transparent;
+    border-bottom: 2px solid black;
+    transition: .5s ease-out;
+    text-align: center;
+  }
+  input:focus {
+    border-top: 2px solid black;
+    border-right: 2px solid black;
+    border-left: 2px solid black;
+  }
+  ::-webkit-input-placeholder {
+    text-align: center;
+    color: black;
+  }
+
+</style>
+<body class = "w3-blue">
 <table align="center">
-  <tr>
-    <th colspan="3">Kyrian</th>
+  <tr id="title">
+    <td colspan="4">
+      <h1 class = "w3-jumbo" style="font-size: 48px; margin-bottom: 2px">
+        JavaScript Showcase
+      </h1>
+    </td>
   </tr>
-  <tr>
-    <td class="count">Word Count</td>
-    <td id="story">Get ready to create your story</td>
-    <td class="count">Characters Met So Far</td>
+  <tr id="Name">
+    <td colspan="4">
+      <h3 style="margin-top: 1px">
+        Jonathan Tarrant
+      </h3>
+    </td>
   </tr>
-  <tr>
-    <td>0</td>
-    <td></td>
-    <td>0</td>
+  <tr id="Row 1 Header">
+    <th class="line">
+      <h3>Changing HTML Content</h3>
+    </th>
+    <th class="line">
+      <h3>Quizzing</h3>
+    </th>
+    <th class="line">
+      <h3>Mouse Over</h3>
+    </th>
+    <th>
+      <h3>Slide Show</h3>
+    </th>
+  </tr>
+  <tr id="Row 1">
+    <td>
+      <p id="demo" class = "w3-xlarge">
+        JavaScript can change HTML content
+      </p>
+      <button type="button" onclick="change()" class="but">
+        Changing HTML Content
+      </button>
+      <br>
+      <button type="button" onclick="walert()" id="but">
+        Alert Message
+      </button>
+      <br>
+      <button type="button" onclick="maths()" class="but">
+        Variables and Math
+      </button>
+      <br>
+      <button type="button" onclick="document.getElementById('demo').innerHTML = 'JavaScript can change HTML content'">
+        Reset
+      </button>
+    </td>
+    <td>
+      <p class = "w3-large" style="margin-top: 0;">
+        What is the color of the sky?
+      </p>
+      <form>
+        <input id="answer1" type="button" value="Blue" onclick="document.getElementById('quiz').innerHTML = 'Correct'">
+        <input id="answer2" type="button" value="Green" onclick="document.getElementById('quiz').innerHTML = 'Incorrect'"><br>
+        <input id="answer3" type="button" value="Red" onclick="document.getElementById('quiz').innerHTML = 'Incorrect'">
+        <input id="answer4" type="button" value="Purple" onclick="document.getElementById('quiz').innerHTML = 'Incorrect'">
+      </form>
+      <button type="button" onclick="document.getElementById('quiz').innerHTML = '<br>'">Try Again</button><br>
+      <div id="quiz"><br></div>
+      <br>
+    </td>
+    <td>
+      <div onmouseover="fontl()" onmouseout="font()" id="MO" align="center">
+        This is a mouse over with a mouse out
+      </div>
+    </td>
+    <td>
+      <div align="center">
+        <p>
+          <img src="bluearrow.png" name="slideshow">
+        </p>
+        <p>
+          <button onclick="doBack()">Back</button>
+          <button onclick="doNext()">Next</button>
+        </p>
+      </div>
+    </td>
+  </tr>
+  <tr id="Row 2 Header">
+    <th class="line">
+      <h3>Password Checker</h3>
+    </th>
+    <th class="line">
+      <h3>BMI Calculator</h3>
+    </th>
+    <th class="line">
+      <h3>String Length</h3>
+    </th>
+    <th>
+      <h3>String Indices</h3>
+    </th>
+  </tr>
+  <tr id="Row 2" style= "margin-bottom:10px; height: 250px;">
+    <td>
+      This will test the strength of your password
+      <form style="margin-top: 10px">
+        Password: <input type="password" name="password" id="password" title="password" placeholder="Password"><br>
+      </form>
+      <button type="button" onclick="checkS()" value="Test">Test</button><br>
+      Strength: <br>
+      Your Password is <span id="strength"></span>
+    </td>
+    <td>
+      <a href="BMI.html" target="_blank"><button type="button"><b>BMI Calculator</b></button></a>
+    </td>
+    <td>
+      <form>
+        <input type="text" placeholder="Please enter a word" id="string"><br>
+        Click the button below for the length of the word:<br>
+      </form>
+      <button type="button" onclick="length()" style="margin-top: 7px">Get the Length</button>
+      <div id="word">
+      </div>
+    </td>
+    <td>
+      <form>
+        <input type="text" id="string2" placeholder="Please enter a word"><br>
+        <input type="number" id="index" placeholder="Index of letter">
+      </form>
+      Click the button below for the letter of an index:<br>
+      <button type="button" onclick="indexletter()" style="margin-top: 7px">Get letter</button>
+      <div id="ind">
+      </div>
+    </td>
+  </tr>
+  <tr id="Row 3 Header">
+    <th class="line">
+      <h3>String Split</h3>
+    </th>
+    <th class="line">
+      <h3>String Concatenation</h3>
+    </th>
+    <th class="line">
+      <h3>String Replacement</h3>
+    </th>
+    <th>
+      <h3>String Case Changing</h3>
+    </th>
+  </tr>
+  <tr id="Row 3" style="height: 250px">
+    <td>
+      <form>
+        <input type="text" placeholder="Please Enter a sentence" id="string3">
+      </form>
+      Click the button below to split the string:<br>
+      <button type="button" onclick="split()">Split the String</button>
+      <div id="split">
+      </div>
+    </td>
+    <td>
+      <form>
+        <input type="text" placeholder="String 1" id="str1"><br>
+        <input type="text" placeholder="String 2" id="str2">
+      </form>
+      Click the button to join the strings:<br>
+      <button type="button" onclick="concat()">Join the strings</button>
+      <div id="concated">
+      </div>
+    </td>
+    <td>
+      <p id="OS">Hello there person</p>
+      <form>
+        <input type="text" placeholder="Your Name" id="RS">
+      </form>
+      Click this button to replace person  in the above string:<br>
+      <button type="button" onclick="replace()">Replace String</button>
+      <div id="replaced">
+      </div>
+    </td>
+    <td>
+      <p id="case"> String methods can change the case of parts of the string</p><br>
+      Click the buttons below to change the case:<br>
+      <button type="button" onclick="cap()">Make all Upper Case</button><br>
+      <button type="button" onclick="low()">Make all Lower Case</button><br>
+      <button type="button" onclick="cap1()" id="cap">Make the first letter Capital</button>
+    </td>
+  </tr>
+  <tr id="Row 4 Header">
+    <th class="line">
+    </th>
+    <th class="line">
+      <h3>
+        Sub String
+      </h3>
+    </th>
+    <th class="line">
+      <h3>General Core Subject Quiz</h3>
+    </th>
+    <th>
+    </th>
+  </tr>
+  <tr id="Row 4">
+    <td>
+    </td>
+    <td>
+      This is a substring method<br>
+      <form>
+        <input type="number" placeholder="Start" id="star"><br>
+        <input type="number" placeholder="End" id="ending"><br>
+      </form>
+      Click the button below to get the sub string:<br>
+      <button type="button" onclick="substr()">Get the Substring</button>
+      <div id="substring">
+      </div>
+    </td>
+    <td>
+      <a href="Create_PT_HTML.html" target="_blank">
+        <button id="GCSQ">
+          General Core Subject Quiz
+        </button>
+      </a>
+    </td>
   </tr>
 </table>
 </body>

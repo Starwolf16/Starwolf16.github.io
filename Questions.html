@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Questions</title>
+  <link rel="stylesheet" type="text/css" href="Create_PT_CSS.css">
+  <link href="https://fonts.googleapis.com/css?family=Arimo|Lato|Oxygen|Raleway" rel="stylesheet">
+</head>
+<script src="CreatePT_JS.js"></script>
+<body onload="qtype()">
+<h1>
+  General Core Subject Quiz
+</h1>
+<h4>
+  Please answer at least 12 questions for accurate results.<br>
+</h4>
+<h5>
+  IMPORTANT: WHEN YOU WANT TO GRADE THE QUIZ, DO NOT CLICK NEXT QUESTION BEFORE CLICKING SCORE QUIZ
+</h5>
+<hr>
+<form>
+  Name:<br>
+  <input type="text" id="name" placeholder="Your name" autocomplete="off">
+</form><br>
+<b>Spelling Matters. You will NOT get credit for misspelled answers</b>
+<p>
+  Your Question:
+</p>
+<div id="q">
+  a
+</div>
+<form id="ans">
+  <input type="text" id="answer" placeholder="Your Answer" autocomplete="off"><br>
+</form>
+<button type="button" onclick="qans()">Check Answer</button><br>
+Your answer was: <div id="check"><br></div><br>
+<button type="button" id="next" onclick="qtype()">Next Question</button><br>
+<button type="button" id="end" onclick="end()">Score Quiz</button>
+<button type="button" id="reload" onclick="window.location.reload()">Take it Again</button><br>
+<div id="sco"><br></div><br>
+<b>DO NOT CLICK NEXT QUESTION BEFORE CLICKING SCORE QUIZ WHEN YOU ARE READY TO GET YOUR SCORE</b>
+</body>
+</html>
