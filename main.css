@@ -1,0 +1,136 @@
+body {
+  background-color:  #d6d6d6;
+  text-align: center;
+  font-family: 'Libre Franklin', sans-serif;
+  //font-family: 'Oxygen', sans-serif;
+}
+sup{
+  font-size: 6pt;
+}
+button {
+  background-color:  #d6d6d6 ;
+  color: #a6a6a6;
+  border: 2px solid  #d6d6d6 ;
+  border-radius: 12px;
+  text-align: center;
+  vertical-align: middle;
+  padding: 1%;
+  cursor: pointer;
+  transition-duration: .4s;
+}
+button:hover {
+  color: black;
+}
+button#up, #down, #left, #right{
+  visibility: hidden;
+}
+#attackc {
+  color: black;
+}
+table, tr, td {
+  //border: 1px solid black;
+  border-collapse: collapse;
+}
+table {
+  width: 75%;
+  align-content: center;
+}
+.head {
+  width: 33%
+}
+#invent{
+  vertical-align: top;
+}
+.stattitle{
+  width: 16.5%;
+  text-align: center;
+  padding-left: 5%;
+}
+.stat{
+  width: 16.5%;
+  text-align: center;
+}
+.HP {
+  padding: 0;
+}
+progress {
+  -webkit-appearance: none;
+  padding-left: -10%;
+}
+progress::-webkit-progress-bar {
+  border-collapse: collapse;
+  background-color: #d6d6d6;
+}
+progress::-webkit-progress-value {
+  background-image: linear-gradient(to right, red , green 50%);
+}
+#opt {
+  width: 100%;
+}
+.ans {
+  width: 25%;
+}
+table#stat {
+  width: 50%;
+  margin-left: 25%;
+}
+td.crstat {
+  width: 25%;
+}
+td.crhead{
+  padding: 1%;
+  padding-bottom: 0;
+}
+blockquote {
+  padding-top: 15%;
+}
+.invrty{
+  margin-top: 2px;
+}
+hr{
+  border: 0;
+  height: 1px;
+  background: #333;
+  background-image: linear-gradient(to right, #ccc, #333, #ccc);
+}
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 240%;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 20px 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 25%;
+  margin-left: -150%;
+  opacity: 0;
+  transition: opacity 1s;
+}
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+.tooltiptext {
+  text-align: left;
+}
+ul {
+  list-style: none;
+  padding-left: 0;
+}

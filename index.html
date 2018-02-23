@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Adventuria</title>
+  <link href="https://fonts.googleapis.com/css?family=Libre+Franklin:200" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet">
+  <link href="main.css" rel="stylesheet">
+</head>
+<script src="game.js"></script>
+<body>
+<h2>Adventuria</h2>
+<button onclick="startgame(); document.getElementById('start').innerHTML = 'Restart'" id="start">Begin Adventure</button>
+<table align="center" id="game">
+<!--stat-->
+  <tr>
+    <td class="head">Inventory<hr class="invrty"></td>
+    <td class="head">
+      <span id="area">WELCOME TO</span>
+    </td>
+    <td class="head" colspan="2">Stats<hr class="invrty"></td>
+  </tr>
+<!--health-->
+  <tr>
+    <td class="head" id="invent" rowspan="4"></td>
+    <td class="head">
+      <span id="ques">YOUR ADVENTURE</span>
+    </td>
+    <td class="stattitle">Hit Points</td>
+    <td class="stat" id="HP"><progress value="0" max="75" id="health">75</progress></td>
+  </tr>
+<!--attack-->
+  <tr>
+    <td id="output"></td>
+    <td class="stattitle">Attack</td>
+    <td class="stat" id="attack">0</td>
+  </tr>
+<!--defense-->
+  <tr>
+    <td id="croutput"></td>
+    <td class="stattitle">Defense</td>
+    <td class="stat" id="defense">0</td>
+  </tr>
+<!--up/crit-->
+  <tr>
+    <td class="ans"><button id="up" onclick="game()">↑</button></td>
+    <td class="stattitle">Crit Chance</td>
+    <td class="stat" id="crit">0</td>
+  </tr>
+<!--leftright-->
+  <tr>
+    <td class="ans" style="text-align: right;"><button id="left" onclick="game()">←</button></td>
+    <td class="ans">
+      <button onclick="attack()" id="attackc" style="display: none">Attack the Creature</button>
+      <button onclick="fchest(); itemstat()" id="chest" style="display: none">Open the Chest</button>
+    </td>
+    <td class="ans" colspan="2" style="text-align: left"><button id="right" onclick="game()">→</button></td>
+  </tr>
+<!--down-->
+  <tr>
+    <td></td>
+    <td class="ans"><button id="down" onclick="game()">↓</button></td>
+    <td colspan="2"></td>
+  </tr>
+</table>
+<br>
+<table id="stat">
+<!--title-->
+  <tr>
+    <td colspan="2" class="crhead">Creature Stat<hr class="invrty"></td>
+    <td colspan="2" class="crhead">Chest Contents<hr class="invrty"></td>
+  </tr>
+<!--health-->
+  <tr>
+    <td class="crstat">Health</td>
+    <td class="crstat" id="crhealth">0</td>
+    <td class="crstat"><div class="tooltip"><span id="chest1">Test</span><span class="tooltiptext" id="0">Tool Tip</span></div></td>
+    <td class="crstat"><div class="tooltip"><span id="chest2">Test</span><span class="tooltiptext" id="1">Tool Tip</span></div></td>
+  </tr>
+<!--attack-->
+  <tr>
+    <td class="crstat">Attack</td>
+    <td class="crstat" id="crattack">0</td>
+    <td class="crstat"><div class="tooltip"><span id="chest3">Test</span><span class="tooltiptext" id="2">Tool Tip</span></div></td>
+    <td class="crstat"><div class="tooltip"><span id="chest4">Test</span><span class="tooltiptext" id="3">Tool Tip</span></div></td>
+  </tr>
+<!--defense-->
+  <tr>
+    <td class="crstat">Defense</td>
+    <td class="crstat" id="crdefense">0</td>
+    <td class="crstat"><div class="tooltip"><span id="chest5">Test</span><span class="tooltiptext" id="4">Tool Tip</span></div></td>
+    <td class="crstat"><div class="tooltip"><span id="chest6">Test</span><span class="tooltiptext" id="5">Tool Tip</span></div></td>
+  </tr>
+<!--crit-->
+  <tr>
+    <td class="crstat">Crit Chance</td>
+    <td class="crstat" id="crcrit">0</td>
+    <!--<td class="crstat"></td>
+    <td class="crstat"></td>-->
+  </tr>
+</table>
+<blockquote>
+  <hr>
+  Jonathan Tarrant <br>
+  August 5<sup><u>th</u></sup>, 2017
+</blockquote>
+</body>
+</html>
